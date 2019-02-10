@@ -1,14 +1,21 @@
 #!/bin/bash
+# *******************************************
 # Program: vietlib 
 # Author: theaddamsC
 # Execution: ./vietlib.command
 # Description: download sources
 # Example:
 # Data: 2019.2.10
+# *******************************************
+# STOP UPDATE!!!
+# can simply use `wget -r -nc URL`
 
-#URL="ftp://vietchigo.myds.me/library/"
+
+URL="ftp://vietchigo.myds.me/library/"
+
+# test
 #URL="ftp://vietchigo.myds.me/library/english/"
-URL="ftp://vietchigo.myds.me/library/photostock/object/"
+#URL="ftp://vietchigo.myds.me/library/photostock/object/"
 
 function getFile(){
 	if [[ ${1} == 0 ]]; then
@@ -43,6 +50,7 @@ function getFile(){
 		else
 			#dir: get into TODO
 			echo -e "dir\t$funcURL$line"
+			
 			TMP="$funcURL"
 			getFile 1 "$funcURL$line" "$line"
 			funcURL="$TMP"
